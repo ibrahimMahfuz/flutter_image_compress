@@ -13,7 +13,7 @@ void jsLog(dynamic tag, dynamic msg) {
   }
 }
 
-void dartLog(Object? msg) {
+void dartLog(Object msg) {
   if (showLog) {
     // ignore: avoid_print
     print(msg.toString());

@@ -43,7 +43,7 @@ class FlutterImageCompressCommon extends FlutterImageCompressPlatform {
   }
 
   @override
-  Future<typed_data.Uint8List?> compressAssetImage(String assetName,
+  Future<typed_data.Uint8List> compressAssetImage(String assetName,
       {int minWidth = 1920,
       int minHeight = 1080,
       int quality = 95,
@@ -76,7 +76,7 @@ class FlutterImageCompressCommon extends FlutterImageCompressPlatform {
   }
 
   @override
-  Future<typed_data.Uint8List?> compressWithFile(
+  Future<typed_data.Uint8List> compressWithFile(
     String path, {
     int minWidth = 1920,
     int minHeight = 1080,
@@ -150,7 +150,7 @@ class FlutterImageCompressCommon extends FlutterImageCompressPlatform {
   }
 
   @override
-  Future<XFile?> compressAndGetFile(
+  Future<XFile> compressAndGetFile(
     String path,
     String targetPath, {
     int minWidth = 1920,
@@ -177,7 +177,7 @@ class FlutterImageCompressCommon extends FlutterImageCompressPlatform {
     if (!support) {
       return null;
     }
-    final String? result = await _channel.invokeMethod(
+    final String result = await _channel.invokeMethod(
       'compressWithFileAndGetFile',
       [
         path,

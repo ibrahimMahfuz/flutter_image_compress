@@ -34,7 +34,7 @@ abstract class FlutterImageCompressPlatform extends PlatformInterface {
     bool keepExif = false,
   });
 
-  Future<typed_data.Uint8List?> compressWithFile(
+  Future<typed_data.Uint8List> compressWithFile(
     String path, {
     int minWidth = 1920,
     int minHeight = 1080,
@@ -47,7 +47,7 @@ abstract class FlutterImageCompressPlatform extends PlatformInterface {
     int numberOfRetries = 5,
   });
 
-  Future<XFile?> compressAndGetFile(
+  Future<XFile> compressAndGetFile(
     String path,
     String targetPath, {
     int minWidth = 1920,
@@ -61,7 +61,7 @@ abstract class FlutterImageCompressPlatform extends PlatformInterface {
     int numberOfRetries = 5,
   });
 
-  Future<typed_data.Uint8List?> compressAssetImage(
+  Future<typed_data.Uint8List> compressAssetImage(
     String assetName, {
     int minWidth = 1920,
     int minHeight = 1080,
@@ -77,7 +77,7 @@ abstract class FlutterImageCompressPlatform extends PlatformInterface {
 
 class UnsupportedFlutterImageCompress extends FlutterImageCompressPlatform {
   @override
-  Future<typed_data.Uint8List?> compressAssetImage(String assetName,
+  Future<typed_data.Uint8List> compressAssetImage(String assetName,
       {int minWidth = 1920,
       int minHeight = 1080,
       int quality = 95,
@@ -89,7 +89,7 @@ class UnsupportedFlutterImageCompress extends FlutterImageCompressPlatform {
   }
 
   @override
-  Future<typed_data.Uint8List?> compressWithFile(String path,
+  Future<typed_data.Uint8List> compressWithFile(String path,
       {int minWidth = 1920,
       int minHeight = 1080,
       int inSampleSize = 1,
@@ -103,7 +103,7 @@ class UnsupportedFlutterImageCompress extends FlutterImageCompressPlatform {
   }
 
   @override
-  Future<XFile?> compressAndGetFile(String path, String targetPath,
+  Future<XFile> compressAndGetFile(String path, String targetPath,
       {int minWidth = 1920,
       int minHeight = 1080,
       int inSampleSize = 1,
